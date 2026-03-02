@@ -1,26 +1,139 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 @import "tailwindcss";
 
+/* ── CSS Custom Properties ──────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --fg-primary:   #030712;
+  --fg-secondary: #374151;
+  --fg-muted:     #6b7280;
+  --bg-primary:   #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-card:      #f3f4f6;
+  --border-col:   #e5e7eb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --fg-primary:   #ffffff;
+  --fg-secondary: #d1d5db;
+  --fg-muted:     #6b7280;
+  --bg-primary:   #030712;
+  --bg-secondary: #0d1117;
+  --bg-card:      #111827;
+  --border-col:   #1f2937;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--fg-primary);
+  font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+::selection {
+  background: var(--fg-primary);
+  color: var(--bg-primary);
+}
+
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-col); border-radius: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--fg-primary);
+  outline-offset: 2px;
+}
+
+/* ── Utilities ──────────────────────────────────────────────── */
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(128,128,128,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128,128,128,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.dark .grid-texture {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-dm-sans), sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--fg-primary);
+  color: var(--bg-primary);
+  border-color: var(--fg-primary);
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--fg-primary);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--fg-primary);
+  border-color: var(--border-col);
+}
+.btn-outline:hover {
+  border-color: var(--fg-primary);
+}
+
+/* ── Stat numbers ───────────────────────────────────────────── */
+.stat-num {
+  font-family: var(--font-bebas), 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--fg-primary);
+}
+
+/* ── Page transition ────────────────────────────────────────── */
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter { animation: pageIn 0.45s ease both; }
+
+/* ── Spotlight (dark mode cursor glow) ─────────────────────── */
+.spotlight {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+}
+ @keyframes ticker    { from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
