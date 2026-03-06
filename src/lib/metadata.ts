@@ -100,8 +100,8 @@ export function organizationSchema() {
     },
     sameAs: [
       'https://twitter.com/xdevsio',
-      'https://linkedin.com/company/xdevs',
-      'https://github.com/xdevs',
+      'https://linkedin.com/company/xdevsltd',
+      'https://github.com/xdevsltd',
     ],
     contactPoint: {
       '@type':       'ContactPoint',

@@ -62,8 +62,8 @@ export default function ContactPage() {
               <div className="flex gap-3">
                 {[
                   { label: 'Twitter', href: 'https://twitter.com/xdevsio' },
-                  { label: 'LinkedIn', href: 'https://linkedin.com/company/xdevs' },
-                  { label: 'GitHub', href: 'https://github.com/xdevs' },
+                  { label: 'LinkedIn', href: 'https://linkedin.com/company/xdevsltd' },
+                  { label: 'GitHub', href: 'https://github.com/xdevsltd' },
                 ].map((s) => (
                   <a
                     key={s.label}
