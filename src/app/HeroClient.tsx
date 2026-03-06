@@ -106,7 +106,7 @@ export function HeroClient({ stats }: { stats: Stat[] }) {
             transition: 'opacity 0.8s ease 0.5s',
           }}
           className="mt-20 pt-8 border-t grid grid-cols-2 md:grid-cols-4 gap-8"
-          style2={{ borderColor: 'var(--border-col)' }}
+          // style2={{ borderColor: 'var(--border-col)' }}
         >
           {stats.map((s) => (
             <div key={s.label}>
