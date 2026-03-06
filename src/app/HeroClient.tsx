@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import Link from 'next/link'
 import { Counter } from '@/components/Counter'
 import type { Stat } from '@/lib/types'
@@ -10,8 +10,13 @@ export function HeroClient({ stats }: { stats: Stat[] }) {
   const [mouse,   setMouse]   = useState({ x: 0, y: 0 })
   const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
+useLayoutEffect(() => {
+    // This runs before paint, so no flash of unstyled content
     setMounted(true)
+  }
+  , [])
+
+  useEffect(() => {
     const h = (e: MouseEvent) => setMouse({ x: e.clientX, y: e.clientY })
     window.addEventListener('mousemove', h)
     return () => window.removeEventListener('mousemove', h)
