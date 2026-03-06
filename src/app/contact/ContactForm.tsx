@@ -15,7 +15,7 @@ export function ContactForm() {
   const [loading, setLoad]  = useState(false)
 
   const iCls = (f: string) => [
-    'w-full bg-transparent border-b-2 py-3 text-sm font-medium outline-none transition-all duration-200',
+    'w-full bg-transparent border px-4 py-3.5 text-sm font-medium outline-none transition-all duration-200',
     'placeholder:opacity-20',
     focused === f ? 'border-current' : '',
     focused !== f ? 'border-[var(--border-col)]' : '',
@@ -34,7 +34,7 @@ export function ContactForm() {
     <div className="flex flex-col items-center justify-center h-full py-20 text-center">
       <p className="font-display opacity-20 mb-6" style={{ fontSize: '5rem', lineHeight: 1 }}>✓</p>
       <h3 className="font-display mb-4" style={{ fontSize: '3rem' }}>MESSAGE SENT</h3>
-      <p className="text-sm opacity-60">We'll get back to you within 24 hours.</p>
+      <p className="text-sm opacity-60">We&apos;ll get back to you within 24 hours.</p>
     </div>
   )
 

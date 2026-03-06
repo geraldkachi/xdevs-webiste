@@ -118,7 +118,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
 // ─── Team ──────────────────────────────────────────────────────────────────
 export const TEAM: TeamMember[] = [
-  { name:'Alex Chen',    initials:'AC', role:'CEO & Co-Founder',    expertise:'Systems Architecture'  },
+  { name:'Adimora Augustine Onyekachi', initials:'AA', role:'CEO & Co-Founder',    expertise:'Systems Architecture'  },
   { name:'Priya Kapoor', initials:'PK', role:'CTO',                 expertise:'AI & Machine Learning' },
   { name:'Marcus Webb',  initials:'MW', role:'Head of Data',        expertise:'Data Engineering'      },
   { name:'Sofia Reyes',  initials:'SR', role:'Head of DevOps',      expertise:'Cloud Infrastructure'  },

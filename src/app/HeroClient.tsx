@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Counter } from '@/components/Counter'
 import type { Stat } from '@/lib/types'
+import AnimatedEngineer from '@/components/AnimatedEngineer'
 
 export function HeroClient({ stats }: { stats: Stat[] }) {
   const [mouse,   setMouse]   = useState({ x: 0, y: 0 })
@@ -83,6 +84,20 @@ export function HeroClient({ stats }: { stats: Stat[] }) {
             <Link href="/case-studies" className="btn btn-outline">Case Studies</Link>
           </div>
         </div>
+
+          {/* Animated Engineer - Absolute positioned */}
+  <div 
+    className="absolute right-0 bottom-96 hidden lg:block"
+    style={{
+      opacity: mounted ? 1 : 0,
+      transform: mounted ? 'none' : 'translateX(32px)',
+      transition: 'opacity 0.9s ease 0.2s, transform 0.9s ease 0.2s',
+    }}
+  >
+    <div className="relative w-80 h-80">
+      <AnimatedEngineer />
+    </div>
+  </div>
 
         {/* Stats */}
         <div
