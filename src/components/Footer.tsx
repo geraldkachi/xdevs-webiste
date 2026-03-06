@@ -81,7 +81,7 @@ export function Footer() {
               {[
                 { label: 'Instagram', href: 'https://www.instagram.com/xdevs.ltd' },
                 { label: 'Twitter / X', href: 'https://twitter.com/xdevsio' },
-                { label: 'LinkedIn', href: 'https://linkedin.com/company/xdevs' },
+                { label: 'LinkedIn', href: 'https://linkedin.com/company/xdevsltd' },
                 { label: 'GitHub', href: 'https://github.com/xdevs' },
                 { label: 'hello@xdevs.io', href: 'mailto:hello@xdevs.io' },
               ].map((s) => (
